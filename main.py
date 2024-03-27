@@ -21,7 +21,7 @@ def all_action_in_here(truyen, start_chapter, end_chapter, number_chapter_in_vid
     path_to_image = truyen['image_path']
 
     arr_count_file_mp3 = all_action_text(start_chapter, end_chapter, truyen['url'],number_chapter_in_video)
-    # arr_count_file_mp3 = [10, 10]
+    # arr_count_file_mp3 = [20, 20]
     get_audio(path_to_save_mp3,download_folder)
 
     make_video(start_chapter,arr_count_file_mp3, path_to_image, path_to_save_mp3 , output_video_folder,number_chapter_in_video)
@@ -82,7 +82,7 @@ mot_quyen = {
     'image_path':'./mot_quyen_1.png'
 }
 try:
-    all_action_in_here(mot_quyen, 91, 111, 10)
+    all_action_in_here(toan_dan_linh_chu, 453, 473, 10)
 except Exception as e:
     # Xử lý lỗi và lấy nội dung lỗi
     error_message = str(e)

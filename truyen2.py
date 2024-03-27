@@ -32,6 +32,7 @@ def initWebTruyen(driver):
 def get_content_chap(driver):
     time.sleep(3)
     wait = WebDriverWait(driver, 10)
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     # Lấy nội dung chương
     name_chap = wait.until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'book-title')))[1].text
     content = wait.until(EC.presence_of_element_located((By.ID, 'bookContentBody'))).text
@@ -88,12 +89,12 @@ def all_action_text(url, end_chater, number_in_chap):
             file.write(f"{value}\n")
 
 name = 'dai_su_huynh'
-all_action_text(r'https://truyenwikidich.net/truyen/cau-o-ma-tong-nam-vung-tu-tien/chuong-91-huyet-nhuc-lo-luyen-ZJZv3cQsRGREqn0A',21,10)
+all_action_text(r'https://truyenwikidich.net/truyen/cau-o-ma-tong-nam-vung-tu-tien/chuong-101-nam-kha-1-mong-van-0-thi-hai-ZJZv3cQsRGREqn0L',23,10)
 
 download_folder = r"C:\Users\Admin\Downloads"
 path_to_save_mp3 = rf"C:\Users\Admin\Downloads\audio_{name}"
 output_video_folder = rf'D:\truyen\{name}'
-get_audio(path_to_save_mp3,download_folder)
+# get_audio(path_to_save_mp3,download_folder)
 
-make_video(91,arr_count_file_mp3, './dai_su_huynh.png', path_to_save_mp3 , output_video_folder,10)
-dele_mp3(path_to_save_mp3)
+# make_video(101,arr_count_file_mp3, './dai_su_huynh.png', path_to_save_mp3 , output_video_folder,10)
+# dele_mp3(path_to_save_mp3)
